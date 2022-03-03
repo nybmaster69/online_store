@@ -11,6 +11,9 @@ class OrderProductInline(admin.TabularInline):
 
 class OrderAdminDisplay(admin.ModelAdmin):
     inlines = [OrderProductInline, ]
+    list_display = ('user', 'status')
+    list_editable = ('status', )
+
 
 
 admin.site.register(Order, OrderAdminDisplay)
